@@ -1,7 +1,7 @@
 // Масиви та об'єкти:
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
-let user=['56', 'name', true, 123, false, 5, -199, 'hello', false, []];
+let user = ['56', 'name', true, 123, false, 5, -199, 'hello', false, []];
 console.log(user[0]);
 console.log(user[1]);
 console.log(user[2]);
@@ -20,12 +20,12 @@ let book1 = {
     pageCount: 456,
     genre: 'Fantasy'
 };
-let book2 ={
+let book2 = {
     title: 'Emotional intelekt',
     pageCount: 260,
     genre: 'Psyhology'
 };
-let book3={
+let book3 = {
     title: 'Hatiko',
     pageCount: 500,
     genre: 'Historical'
@@ -33,40 +33,55 @@ let book3={
 
 // // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
 
-let book4={
-    title:'Startrack',
+let book4 = {
+    title: 'Startrack',
     pageCount: 620,
     genre: 'Fantasy',
-    authors: ['Jastin Mayer', 56]
+    authors: [
+        {
+            name: 'Jastin Mayer',
+            age: 56
+        }
+    ]
 }
 
-let book5={
+let book5 = {
     title: 'Dark swan',
     pageCount: 253,
     genre: 'horror',
-    authors: ['Jane Lock',72]
+    authors: [
+        {
+            name: 'Jane Lock',
+            age: 72
+        }
+    ]
 }
 
-let book6={
+let book6 = {
     title: 'Wonderwoman',
     pageCount: 386,
-    genre:'Drama',
-    authors: ['Tom Walker', 61]
+    genre: 'Drama',
+    authors: [
+        {
+            name: 'Tom Walker',
+            age: 61
+        }
+    ]
 }
 
 // // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
 let users = [
-    {name:'Borys', username:'Boro', password:'0000'},
-    {name:'Anna', username:'Anet', password:'1111'},
-    {name:'Ivan', username:'Ivanko', password:'2222'},
-    {name:'Olya', username:'Olka', password:'3333'},
-    {name:'Anriy', username:'Andrew', password:'4444'},
-    {name:'Ostap', username:'Ostapko', password:'5555'},
-    {name:'Hanna', username:'Annet', password:'6666'},
-    {name:'Pavlo', username:'Pasha', password:'7777'},
-    {name:'Taras', username:'Tarasko', password:'8888'},
-    {name:'Artem', username:'Tema', password:'9999'}
+    {name: 'Borys', username: 'Boro', password: '0000'},
+    {name: 'Anna', username: 'Anet', password: '1111'},
+    {name: 'Ivan', username: 'Ivanko', password: '2222'},
+    {name: 'Olya', username: 'Olka', password: '3333'},
+    {name: 'Anriy', username: 'Andrew', password: '4444'},
+    {name: 'Ostap', username: 'Ostapko', password: '5555'},
+    {name: 'Hanna', username: 'Annet', password: '6666'},
+    {name: 'Pavlo', username: 'Pasha', password: '7777'},
+    {name: 'Taras', username: 'Tarasko', password: '8888'},
+    {name: 'Artem', username: 'Tema', password: '9999'}
 ]
 console.log(users[0].password);
 console.log(users[1].password);
