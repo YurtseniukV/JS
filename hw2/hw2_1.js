@@ -83,6 +83,7 @@ let users = [
     {name: 'Taras', username: 'Tarasko', password: '8888'},
     {name: 'Artem', username: 'Tema', password: '9999'}
 ]
+
 console.log(users[0].password);
 console.log(users[1].password);
 console.log(users[2].password);
