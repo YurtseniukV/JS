@@ -14,6 +14,7 @@ console.log(user[8]);
 console.log(user[9]);
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
+
 let book1 = {
     title: 'Duna',
     pageCount: 456,
