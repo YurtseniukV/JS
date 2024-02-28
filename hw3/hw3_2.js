@@ -19,13 +19,11 @@
 
 
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-
+document.write(`<ul>`)
 for (let i = 0; i<listOfItems.length; i++){
-    document.write(`<ul>
-<li>${listOfItems[i]}</li>
-</ul>`)
+    document.write(`<li>${listOfItems[i]}</li>`)
 }
-
+document.write(`</ul>`)
 
 
 // Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -91,7 +89,7 @@ let users = [
 ];
 
 for(let user of users){
-    if(user.status >0){
+    if(user.status === true){
         console.log(user);
     }
 }
@@ -99,7 +97,7 @@ for(let user of users){
 
 // - користувачів зі статусом false
 for (let user1 of users){
-            if(user1.status < 0){
+            if(user1.status === false){
         console.log(user1);
     }
 }

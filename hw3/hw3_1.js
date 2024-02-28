@@ -22,7 +22,7 @@ let items=[
 
 for (let i = 0; i < items.length; i++) {
     const item = items[i];
-    document.write(`<div> ${item.greeting} </div>`)
+    document.write(`<div> ${item.greeting} ${[i]}</div>`)
 }
 
 
@@ -38,6 +38,6 @@ while (i<20){
     let ii = 0;
     while (ii<20){
         let item = content[ii];
-        document.write(`<h1>${item}</h1>`);
+        document.write(`<h1>${item} ${[ii]}</h1>`);
         ii++;
     }
