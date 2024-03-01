@@ -168,10 +168,26 @@ let qq= swap([2, 6, 9, 10],6,66);
 //
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-function exchange(sum,currencyValues,exchangeCurrency) {
-    return sum/currencyValues + ` ${exchangeCurrency}`;
+
+let currencyValues = [
+    {currency: 'USD', value:40},
+    {currency: 'EUR', value:42},
+    {currency: 'PL', value:9}
+]
+
+
+function exchange(sumUAH,exchangeCurrency) {
+    let moneyExch;
+    for (const item of currencyValues) {
+        if (exchangeCurrency === item.currency  ) {
+            moneyExch = item.value;
+        }
+
+    }
+
+    return sumUAH/moneyExch + ` ${exchangeCurrency}`;
 }
-let money = exchange(100,40,'USD');
+
+let money = exchange(10000,'USD')
 console.log(money);
-let money2 = exchange(4200,42,'EUR');
-console.log(money2);
+
