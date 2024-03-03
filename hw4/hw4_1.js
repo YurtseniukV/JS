@@ -89,19 +89,20 @@ mass(names);
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 function arrayOfObjects(array){
-    for (let arrayEl in array) {
-        document.write(`
-    <div>${arrayEl} : ${array[arrayEl]}</div>
-    `)
+    for (let item of array){
+        for (let obj in item){
+            document.write(`
+        <div> ${obj} : ${item[obj]} </div>
+        `)
+        }
     }
+}
 
-}
-let objects = {
-    id:235,
-    name: 'Olya',
-    age:26
-}
-arrayOfObjects(objects);
+let peoples = [
+    {name : 'Vasya', id : 'Vas', age: 55},
+    {name:'Ivan', id:'Iv' , age:23}
+]
+arrayOfObjects(peoples);
 
 
 
@@ -145,20 +146,16 @@ console.log(numbers);
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 
-function swap(arr,index1,index2){
-    if (arr[0]===arr[0] && arr[1]===arr[1] && arr[2]===arr[2] && arr[3]===arr[3]){
-     let a = arr[1];
-     let b = arr[2];
-    let c = arr[3];
-     arr[3] = arr[0];
-     arr[0] = b;
-     arr[2]= a;
-     arr[1] = c;
-    }
+function swap(arr,index1,index2) {
+    let arrItem = arr[0];
+    arr[0] = arr[1];
+    arr[1]= arr[2];
+    arr[2] = arrItem;
     console.log(arr,index1,index2);
 }
-
-let qq= swap([2, 6, 9, 10],6,66);
+let qq = [11, 22, 33,];
+console.log(qq);
+swap(qq,44,55);
 
 
 
@@ -169,25 +166,15 @@ let qq= swap([2, 6, 9, 10],6,66);
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
-let currencyValues = [
-    {currency: 'USD', value:40},
-    {currency: 'EUR', value:42},
-    {currency: 'PL', value:9}
-]
-
-
-function exchange(sumUAH,exchangeCurrency) {
-    let moneyExch;
+function exchange(sumUAH,currencyValues,exchangeCurrency){
+    let moneyExch=0;
     for (const item of currencyValues) {
         if (exchangeCurrency === item.currency  ) {
             moneyExch = item.value;
         }
-
     }
-
     return sumUAH/moneyExch + ` ${exchangeCurrency}`;
 }
 
-let money = exchange(10000,'USD')
+let money = exchange(10000,[{currency: 'USD', value:40}, {currency: 'EUR', value:42}],'USD')
 console.log(money);
-
