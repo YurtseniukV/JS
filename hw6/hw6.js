@@ -230,3 +230,133 @@ let spadeCards = ( nineUpCards.reduce((accum,card) =>{
 
 console.log(spadeCards);
 
+
+
+
+
+
+// Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+// {
+//     spades:[],
+//         diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+
+let cardSort = cards.reduce((accumulator,card)=> {
+    if (card.cardSuit === 'spade'){
+        accumulator.spades.push(card);
+    }else if (card.cardSuit === 'diamond'){
+        accumulator.diamonds.push(card);
+    }else if (card.cardSuit === 'heart'){
+        accumulator.hearts.push(card);
+    } else {
+        accumulator.clubs.push(card);
+    }
+    return accumulator;
+
+},{spades:[],diamonds:[],hearts:[],clubs:[]});
+
+console.log(cardSort);
+
+
+
+
+
+
+// взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
+// --написати пошук всіх об'єктів, в який в modules є sass
+
+let sassObj = coursesArray.filter(value => {
+    if (value.modules.includes('sass')){
+        return value;
+    }
+
+});
+console.log(sassObj);
+
+
+
+
+
+
+
+
+// --написати пошук всіх об'єктів, в який в modules є docker
+let dockerObj = coursesArray.filter(value =>{
+    if (value.modules.includes('docker')){
+        return value;
+    }
+});
+console.log(dockerObj);
