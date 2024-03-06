@@ -33,21 +33,27 @@ console.log(str3Upp.toLowerCase());
 //
 // // - Є "брудна" стрінга - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str4 = ' dirty string   ' ;
-let str4New = str4.slice(1, 13);
+let str4New = str4.trim();
 console.log(str4New);
 
-//
-//
+
+
+
+
+
 // // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 // //     let str = 'Ревуть воли як ясла повні';
 // // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
-let arr = ['Ревуть', 'воли', 'як', 'ясла', 'повні'];
-let str5 = arr.join(' ');
-console.log(str5);
+// let arr = ['Ревуть', 'воли', 'як', 'ясла', 'повні'];
+// let str5 = arr.join(' ');
+// console.log(str5);
 
-//
-//
-//
+let st = 'Ревуть воли як ясла повні';
+let stNew = st.split(' ');
+console.log(stNew);
+
+
+
 // // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 //
 let mass = [10,8,-7,55,987,-1011,0,1050,0];
@@ -215,7 +221,7 @@ console.log(diamonds);
 //
 
 let nineUpCards = cards.filter(value =>{
-    return value.value === '10' || value.value === 'ace' || value.value === 'queen' || value.value === 'jack' || value.value === 'king';
+    return value.value === '9' || value.value === '10'|| value.value === 'ace' || value.value === 'queen' || value.value === 'jack' || value.value === 'king';
 })
 let clubsCards = ( nineUpCards.reduce((accum,card) =>{
 
