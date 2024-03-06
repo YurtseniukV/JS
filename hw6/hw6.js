@@ -139,46 +139,46 @@ console.log(mapedLessons);
 // // }
 let cards = [
     { color:'red', value:'6', cardSuit:'heart'},
-    { color:'red', value:'6', cardSuit:'clubs'},
+    { color:'red', value:'6', cardSuit:'diamond'},
     { color:'black', value:'6', cardSuit:'spade'},
-    { color:'black', value:'6', cardSuit:'diamond'},
-    { color:'black', value:'7', cardSuit:'diamond'},
+    { color:'black', value:'6', cardSuit:'clubs'},
+    { color:'black', value:'7', cardSuit:'clubs'},
     { color:'black', value:'7', cardSuit:'spade'},
     { color:'red', value:'7', cardSuit:'heart'},
-    { color:'red', value:'7', cardSuit:'clubs'},
+    { color:'red', value:'7', cardSuit:'diamond'},
     { color:'red', value:'8', cardSuit:'heart'},
-    { color:'red', value:'8', cardSuit:'clubs'},
-    { color:'black', value:'8', cardSuit:'diamond'},
+    { color:'red', value:'8', cardSuit:'diamond'},
+    { color:'black', value:'8', cardSuit:'clubs'},
     { color:'black', value:'8', cardSuit:'spade'},
-    { color:'black', value:'9', cardSuit:'diamond'},
+    { color:'black', value:'9', cardSuit:'clubs'},
     { color:'black', value:'9', cardSuit:'spade'},
     { color:'red', value:'9', cardSuit:'heart'},
-    { color:'red', value:'9', cardSuit:'clubs'},
-    { color:'red', value:'10', cardSuit:'clubs'},
+    { color:'red', value:'9', cardSuit:'diamond'},
+    { color:'red', value:'10', cardSuit:'diamond'},
     { color:'red', value:'10', cardSuit:'heart'},
-    { color:'black', value:'10', cardSuit:'diamond'},
+    { color:'black', value:'10', cardSuit:'clubs'},
     { color:'black', value:'10', cardSuit:'spade'},
-    { color:'black', value:'jack', cardSuit:'diamond'},
+    { color:'black', value:'jack', cardSuit:'clubs'},
     { color:'black', value:'jack', cardSuit:'spade'},
-    { color:'red', value:'jack', cardSuit:'clubs'},
+    { color:'red', value:'jack', cardSuit:'diamond'},
     { color:'red', value:'jack', cardSuit:'heart'},
-    { color:'red', value:'queen', cardSuit:'clubs'},
+    { color:'red', value:'queen', cardSuit:'diamond'},
     { color:'red', value:'queen', cardSuit:'heart'},
-    { color:'black', value:'queen', cardSuit:'diamond'},
+    { color:'black', value:'queen', cardSuit:'clubs'},
     { color:'black', value:'queen', cardSuit:'spade'},
-    { color:'black', value:'king', cardSuit:'diamond'},
+    { color:'black', value:'king', cardSuit:'clubs'},
     { color:'black', value:'king', cardSuit:'spade'},
-    { color:'red', value:'king', cardSuit:'clubs'},
+    { color:'red', value:'king', cardSuit:'diamond'},
     { color:'red', value:'king', cardSuit:'heart'},
-    { color:'red', value:'ace', cardSuit:'clubs'},
+    { color:'red', value:'ace', cardSuit:'diamond'},
     { color:'red', value:'ace', cardSuit:'heart'},
-    { color:'black', value:'ace', cardSuit:'diamond'},
+    { color:'black', value:'ace', cardSuit:'clubs'},
     { color:'black', value:'ace', cardSuit:'spade'},
 
 ];
 //
 // // - знайти піковий туз
-let ace = cards.find(value =>value.value === 'ace' && value.cardSuit === 'diamond');
+let ace = cards.find(value =>value.value === 'ace' && value.cardSuit === 'spade');
 console.log(ace);
 
 //
@@ -203,10 +203,10 @@ console.log(redCards);
 
 //
 // // - всі буби
-let clubs = cards.filter(value => {
-    return value.cardSuit === 'clubs';
+let diamonds = cards.filter(value => {
+    return value.cardSuit === 'diamond';
 })
-console.log(clubs);
+console.log(diamonds);
 
 
 //
@@ -217,18 +217,18 @@ console.log(clubs);
 let nineUpCards = cards.filter(value =>{
     return value.value === '10' || value.value === 'ace' || value.value === 'queen' || value.value === 'jack' || value.value === 'king';
 })
-let spadeCards = ( nineUpCards.reduce((accum,card) =>{
+let clubsCards = ( nineUpCards.reduce((accum,card) =>{
 
-    if (card.cardSuit === 'spade'){
+    if (card.cardSuit === 'clubs'){
         accum.newCards.push(card);
-    } else if (card.cardSuit !== 'spade'){
+    } else if (card.cardSuit !== 'clubs'){
         accum.oldCards.push(card);
     }
     return accum;
 
 },{newCards:[], oldCards:[]}));
 
-console.log(spadeCards);
+console.log(clubsCards);
 
 
 
