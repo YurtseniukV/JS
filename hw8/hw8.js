@@ -94,11 +94,10 @@ console.log(clients);
 
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 
- let sortClients = clients.sort((a,b) =>{
-return b.order - a.order;
+ let sortClients = clients.sort((a, b) =>{
+return a.order.length - b.order.length;
 })
 console.log(sortClients);
-
 
 
 
@@ -120,7 +119,7 @@ console.log(sortClients);
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
 
-function Car (model,year,speedMax,capacity,manufacturer,driver = []){
+function Car (model,year,speedMax,capacity,manufacturer,driver=[]){
 this.model = model;
 this.year = year;
 this.manufacturer = manufacturer;
@@ -130,8 +129,8 @@ this.driver = driver;
 
 
 
-    this.addDriver= function (driver){
-        this.driver.push(driver);
+    this.addDriver = function (driver){
+        this.driver.push({driver});
     }
 
 }
@@ -186,12 +185,13 @@ console.log(reno.info());
 
 
 class Car2 {
-constructor(model,year,speedMax,capacity,manufacturer){
+constructor(model,year,speedMax,capacity,manufacturer,driver = []){
     this.model = model;
     this.year = year;
     this.manufacturer = manufacturer;
     this.speedMax = speedMax;
     this.capacity = capacity;
+    this.driver = driver;
 
 }
 
@@ -214,6 +214,11 @@ constructor(model,year,speedMax,capacity,manufacturer){
     changeYear (newValue){
         return this.year = newValue;
     }
+    addDriver = function (driver){
+        driver.push({driver});
+    }
+
+
 
 }
 
@@ -223,6 +228,7 @@ console.log(audi.drive());
 console.log(audi.info());
 console.log(audi.increaseMaxSpeed(100));
 console.log(audi.changeYear(2024));
+console.log(audi.addDriver({name:oleh}));
 
 
 
