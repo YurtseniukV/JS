@@ -94,8 +94,8 @@ console.log(clients);
 
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 
- let sortClients = clients.sort((a, b) =>{
-return a.order.length - b.order.length;
+let sortClients = clients.sort((a, b) =>{
+    return a.order.length - b.order.length;
 })
 console.log(sortClients);
 
@@ -120,12 +120,12 @@ console.log(sortClients);
 
 
 function Car (model,year,speedMax,capacity,manufacturer,driver=[]){
-this.model = model;
-this.year = year;
-this.manufacturer = manufacturer;
-this.speedMax = speedMax;
-this.capacity = capacity;
-this.driver = driver;
+    this.model = model;
+    this.year = year;
+    this.manufacturer = manufacturer;
+    this.speedMax = speedMax;
+    this.capacity = capacity;
+    this.driver = driver;
 
 
 
@@ -163,8 +163,9 @@ console.log(reno.drive());
 console.log(reno.info());
 console.log(reno.increaseMaxSpeed(30));
 console.log(reno.changeYear(2018));
-reno.addDriver({model:'Reno', year:2015});
+reno.addDriver({name:'Roma', age:25});
 console.log(reno.info());
+console.log(reno);
 
 
 
@@ -185,15 +186,20 @@ console.log(reno.info());
 
 
 class Car2 {
-constructor(model,year,speedMax,capacity,manufacturer,driver = []){
-    this.model = model;
-    this.year = year;
-    this.manufacturer = manufacturer;
-    this.speedMax = speedMax;
-    this.capacity = capacity;
-    this.driver = driver;
+    constructor(model,year,speedMax,capacity,manufacturer,driver = []){
+        this.model = model;
+        this.year = year;
+        this.manufacturer = manufacturer;
+        this.speedMax = speedMax;
+        this.capacity = capacity;
+        this.driver = driver;
 
-}
+
+        this.addDriver = function (driver){
+            this.driver.push({driver});
+        }
+
+    }
 
     drive(){
         return `Їдемо зі швидкістю ${this.speedMax} на годину`;
@@ -207,15 +213,12 @@ constructor(model,year,speedMax,capacity,manufacturer,driver = []){
             Обєм двигуна - ${this.capacity}.`
     }
 
- increaseMaxSpeed (newSpeed){
+    increaseMaxSpeed (newSpeed){
         return this.speedMax += newSpeed;
     }
 
     changeYear (newValue){
         return this.year = newValue;
-    }
-    addDriver = function (driver){
-        driver.push({driver});
     }
 
 
@@ -228,8 +231,8 @@ console.log(audi.drive());
 console.log(audi.info());
 console.log(audi.increaseMaxSpeed(100));
 console.log(audi.changeYear(2024));
-console.log(audi.addDriver({name:oleh}));
-
+audi.addDriver({name:'Romko', age:25});
+console.log(audi);
 
 
 
@@ -292,4 +295,3 @@ coupleFinder(prince,cinderellas);
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 let findPrinces = cinderellas.find((princes,prince) => princes.footSize === 37);
 console.log(findPrinces);
-
