@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+body{
+    margin: 0;
+}
+section{
+    display: inline-block;
+    border: 0.4px black solid;
+    width: 45%;
+    margin-left: 40px;
+    padding: 10px;
+}
+.mainBlock{
+    display: block;
+      border: none;
+    margin: 0 0 40px 0;
+
+  }
+
+div{
+    border: 0.4px black solid;
+    margin: 10px;
+    padding: 10px;
+}
+.liStyle{
+    border: 0.1px grey solid;
+    margin: 8px;
+    padding: 3px 0 3px 6px;
+}
+p,span,li{
+    font-family: Inter;
+    font-size: 20px;
+
+}
+    </style>
+</head>
+<body>
+
+
+
+
+
+<script>
+
+    // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+    // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
+
+    let courses = [
+        {
+            title: 'JavaScript Complex',
+            monthDuration: 5,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+        },
+        {
+            title: 'Java Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'java core',
+                'java advanced']
+        },
+        {
+            title: 'Python Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'python core',
+                'python advanced']
+        },
+        {
+            title: 'QA Complex',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'QA/QC']
+        },
+        {
+            title: 'FullStack',
+            monthDuration: 7,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'node.js',
+                'python',
+                'java']
+        },
+        {
+            title: 'Frontend',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+        }
+    ];
+
+
+
+
+    for (const cours of courses) {
+        let div = document.createElement('div');
+        div.classList.add('mainBlock');
+        document.body.appendChild(div);
+
+        let divTitle = document.createElement('div');
+        divTitle.innerHTML = `<h1>Назва курсу  -  ${cours.title}</h1>`;
+        div.appendChild(divTitle);
+
+        let divMonthDuration = document.createElement('section');
+        divMonthDuration.innerHTML = `<p>Тривалість навчання : ${cours.monthDuration}<p/>`;
+        div.appendChild(divMonthDuration);
+
+
+        let divHours = document.createElement('section');
+        divHours.innerHTML = `<span> Кількість навчальних годин : ${cours.hourDuration}</span`;
+        div.appendChild(divHours);
+
+
+        let modules = document.createElement('div');
+        div.appendChild(modules);
+        let ul = document.createElement('ul');
+        ul.innerHTML = `<p> Перелік модулів : </p>`
+        modules.appendChild(ul);
+
+
+        for (const el of cours.modules) {
+            let divLi = document.createElement('div');
+            divLi.classList.add('liStyle');
+            divLi.innerHTML = `<li class ='li'>${el}</li>`
+            ul.appendChild(divLi);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
