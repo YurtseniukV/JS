@@ -1,3 +1,7 @@
+// Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+
+
+
 // let users = [];
 // let divObj = document.createElement('div');
 // document.body.appendChild(divObj);
@@ -40,4 +44,5 @@ button.onclick = function () {
     divObj.innerText = `${inputUsername.value} ${inputSurname.value}, вік : ${inputAge.value}`;
 
 }
+
 
