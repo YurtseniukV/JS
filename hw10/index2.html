@@ -5,17 +5,23 @@
     <title>Title</title>
 
     <style>
-        .block{
+       div{
             width: 200px;
             height: 200px;
             text-align: center;
             border: 1px red solid;
-            margin: 50px;
+            margin: 50px 0 10px 50px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-
+button{
+    width: 200px;
+    height: 40px;
+    background-color: lightskyblue;
+    margin: 0 50px;
+}
 
     </style>
 
@@ -26,21 +32,28 @@
 <script>
     // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-    // localStorage.setItem('num','5');
-    // let num = JSON.parse(localStorage.getItem('num'));
+
+    let number = 7;
+    let div = document.createElement('div');
+document.onreadystatechange = function() {
+
+    if (document.readyState === 'interactive') {
+        if (!localStorage.getItem('num')) {
+            localStorage.setItem('num', JSON.stringify(number+=1));
+        }
+
+        // div.innerText = `${number}`;
+        // div.innerText = JSON.parse(localStorage.getItem('num'));
+        div.innerText = JSON.parse(localStorage.getItem('num'));
+    }
+
+    }
+    document.body.appendChild(div);
 
 
-//     num = 1;
-//     if (document.location.reload()){
-//         num = num +1
-//     }
-//
-// console.log(num);
 
-    // let div = document.createElement('div');
-    // div.classList.add('block');
-    // div.innerHTML = `${num}`;
-    // document.body.appendChild(div);
+
+
 
 
 </script>
