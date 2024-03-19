@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class ='prev'>Prev</button>
+<button class = 'next'>Next</button>
+<script>
+
+    // зробити масив на 100 об'єктів та дві кнопки prev next
+    // при завантажені сторінки з'являються перші 10 об'єктів.
+    //     При натисканні next виводяться настпні 10 об'єктів
+    // При натисканні prev виводяться попередні 10 об'єктів
+
+
+
+    let users = [
+        {name:'Anna'},
+        {name:'Amina'},
+        {name:'Asya'},
+        {name:'April'},
+        {name: 'Abi'},
+        {name: 'Aplo'},
+        {name: 'Roma'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'},
+        {name: 'Rasten'},
+        {name: 'Runi'},
+        {name: 'Dima'},
+        {name: 'Diana'},
+        {name: 'Dana'},
+        {name: 'Demiyan'},
+        {name: 'Dynya'},
+        {name: 'Doris'},
+        {name: 'Daria'},
+        {name: 'Denys'},
+        {name: 'Dafna'},
+        {name: 'Dunia'},
+        {name: 'Didi'},
+        {name:'Dilis'},
+        {name:'Demko'},
+        {name:'Dino'},
+        {name:'Deyv'},
+        {name: 'Ann'},
+        {name: 'Alisa'},
+        {name: 'Amina'},
+        {name: 'Asya'},
+        {name: 'April'},
+        {name: 'Abi'},
+        {name: 'Aplo'},
+        {name: 'Roma'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'},
+        {name: 'Rasten'},
+        {name: 'Runi'},
+        {name: 'Dima'},
+        {name: 'Diana'},
+        {name: 'Dana'},
+        {name: 'Demiyan'},
+        {name: 'Dyny'},
+        {name: 'Doris'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'},
+        {name: 'Rasten'},
+        {name: 'Runi'},
+        {name: 'Dima'},
+        {name: 'Diana'},
+        {name: 'Dana'},
+        {name: 'Demiyan'},
+        {name: 'Dyny'},
+        {name: 'Doris'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'},
+        {name: 'Rasten'},
+        {name: 'Runi'},
+        {name: 'Dima'},
+        {name: 'Diana'},
+        {name: 'Dana'},
+        {name: 'Demiyan'},
+        {name: 'Dyny'},
+        {name: 'Doris'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'},
+        {name: 'Rasten'},
+        {name: 'Runi'},
+        {name: 'Dima'},
+        {name: 'Diana'},
+        {name: 'Dana'},
+        {name: 'Demiyan'},
+        {name: 'Dyny'},
+        {name: 'Doris'},
+        {name: 'Rostyk'},
+        {name: 'Robert'},
+        {name: 'Richard'},
+        {name: 'Rikki'},
+        {name: 'Renni'},
+        {name: 'Ryli'}
+    ]
+
+
+
+
+    let next = document.getElementsByTagName('button')[1];
+
+    let start = 0;
+    let step = 5;
+    let end = start + step;
+
+
+    next.onclick = function (){
+        for (let i = start; i < end; i++) {
+
+            if (i < users.length) {
+                let p = document.createElement('p');
+                p.innerText = `${users[i].name}`
+                document.body.appendChild(p);
+            }
+
+        }
+        start = end;
+        end = end + step;
+    };
+
+
+
+
+    let prev = document.getElementsByTagName('button')[0];
+
+let newEnd = newStart - step
+// масив наоборот який йде по циклу назад
+//     змінити ліміт та і++
+    prev.onclick = function (){
+        for (let i = start; i < newEnd; i++) {
+
+            if (i < users.length) {
+                let p = document.createElement('p');
+                p.innerText = `${users[i].name}`
+                document.body.appendChild(p);
+            }
+
+        }
+        newStart = end;
+        newEnd = newEnd - step;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

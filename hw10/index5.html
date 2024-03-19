@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    #text{
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 20px;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div id = 'text'></div>
+
+
+
+<script>
+    let div = document.getElementById('text');
+let button = document.createElement('button');
+button.innerText = 'oops';
+document.body.append(div,button);
+
+
+button.onclick = function (){
+    div.style.display = 'none';
+}
+
+</script>
+</body>
+</html>

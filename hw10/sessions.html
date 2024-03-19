@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessions</title>
+
+</head>
+<body>
+
+
+<div class="target"></div>
+<script>
+    function sessionsList() {
+
+        let ol = document.createElement('ol');
+        document.body.appendChild(ol);
+
+
+        let sessionsArray = JSON.parse(localStorage.getItem('sessions'));
+        for (const session of sessionsArray) {
+            let li = document.createElement('li');
+
+            li.innerText = `Cторінку відвідували ${session.day}го березня, об ${session.hour}:${session.minutes}:${session.seconds} годині.`
+
+            ol.appendChild(li);
+
+        }
+
+    }
+
+    sessionsList();
+
+</script>
+</body>
+</html>

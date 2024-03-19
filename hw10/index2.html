@@ -16,12 +16,6 @@
             align-items: center;
             justify-content: center;
         }
-button{
-    width: 200px;
-    height: 40px;
-    background-color: lightskyblue;
-    margin: 0 50px;
-}
 
     </style>
 
@@ -32,24 +26,16 @@ button{
 <script>
     // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-
-    let number = 7;
     let div = document.createElement('div');
-document.onreadystatechange = function() {
+    let num = JSON.parse(localStorage.getItem('num')) || '0'
+    console.log(typeof num)
+    let number = num +1;
+    console.log(typeof number)
+div.innerText = `${number}`;
+    JSON.stringify('number');
+    localStorage.setItem('num',`${number}`);
 
-    if (document.readyState === 'interactive') {
-        if (!localStorage.getItem('num')) {
-            localStorage.setItem('num', JSON.stringify(number+=1));
-        }
-
-        // div.innerText = `${number}`;
-        // div.innerText = JSON.parse(localStorage.getItem('num'));
-        div.innerText = JSON.parse(localStorage.getItem('num'));
-    }
-
-    }
     document.body.appendChild(div);
-
 
 
 
