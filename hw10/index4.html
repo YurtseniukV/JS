@@ -1,187 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Title</title>
 </head>
+
 <body>
-<button class ='prev'>Prev</button>
-<button class = 'next'>Next</button>
+<button class="prev">Prev</button>
+<button class="next">Next</button>
+<div id="usersContainer"></div>
 <script>
-
-    // зробити масив на 100 об'єктів та дві кнопки prev next
-    // при завантажені сторінки з'являються перші 10 об'єктів.
-    //     При натисканні next виводяться настпні 10 об'єктів
-    // При натисканні prev виводяться попередні 10 об'єктів
-
-
-
     let users = [
-        {name:'Anna'},
-        {name:'Amina'},
-        {name:'Asya'},
-        {name:'April'},
-        {name: 'Abi'},
-        {name: 'Aplo'},
-        {name: 'Roma'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'},
-        {name: 'Rasten'},
-        {name: 'Runi'},
-        {name: 'Dima'},
-        {name: 'Diana'},
-        {name: 'Dana'},
-        {name: 'Demiyan'},
-        {name: 'Dynya'},
-        {name: 'Doris'},
-        {name: 'Daria'},
-        {name: 'Denys'},
-        {name: 'Dafna'},
-        {name: 'Dunia'},
-        {name: 'Didi'},
-        {name:'Dilis'},
-        {name:'Demko'},
-        {name:'Dino'},
-        {name:'Deyv'},
-        {name: 'Ann'},
-        {name: 'Alisa'},
-        {name: 'Amina'},
-        {name: 'Asya'},
-        {name: 'April'},
-        {name: 'Abi'},
-        {name: 'Aplo'},
-        {name: 'Roma'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'},
-        {name: 'Rasten'},
-        {name: 'Runi'},
-        {name: 'Dima'},
-        {name: 'Diana'},
-        {name: 'Dana'},
-        {name: 'Demiyan'},
-        {name: 'Dyny'},
-        {name: 'Doris'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'},
-        {name: 'Rasten'},
-        {name: 'Runi'},
-        {name: 'Dima'},
-        {name: 'Diana'},
-        {name: 'Dana'},
-        {name: 'Demiyan'},
-        {name: 'Dyny'},
-        {name: 'Doris'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'},
-        {name: 'Rasten'},
-        {name: 'Runi'},
-        {name: 'Dima'},
-        {name: 'Diana'},
-        {name: 'Dana'},
-        {name: 'Demiyan'},
-        {name: 'Dyny'},
-        {name: 'Doris'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'},
-        {name: 'Rasten'},
-        {name: 'Runi'},
-        {name: 'Dima'},
-        {name: 'Diana'},
-        {name: 'Dana'},
-        {name: 'Demiyan'},
-        {name: 'Dyny'},
-        {name: 'Doris'},
-        {name: 'Rostyk'},
-        {name: 'Robert'},
-        {name: 'Richard'},
-        {name: 'Rikki'},
-        {name: 'Renni'},
-        {name: 'Ryli'}
-    ]
+        { name: "Anna" },
+        { name: "Amina" },
+        { name: "Asya" },
+        { name: "April" },
+        { name: "Abi" },
+        { name: "Aplo" },
+        { name: "Roma" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+        { name: "Rasten" },
+        { name: "Runi" },
+        { name: "Dima" },
+        { name: "Diana" },
+        { name: "Dana" },
+        { name: "Demiyan" },
+        { name: "Dynya" },
+        { name: "Doris" },
+        { name: "Daria" },
+        { name: "Denys" },
+        { name: "Dafna" },
+        { name: "Dunia" },
+        { name: "Didi" },
+        { name: "Dilis" },
+        { name: "Demko" },
+        { name: "Dino" },
+        { name: "Deyv" },
+        { name: "Ann" },
+        { name: "Alisa" },
+        { name: "Amina" },
+        { name: "Asya" },
+        { name: "April" },
+        { name: "Abi" },
+        { name: "Aplo" },
+        { name: "Roma" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+        { name: "Rasten" },
+        { name: "Runi" },
+        { name: "Dima" },
+        { name: "Diana" },
+        { name: "Dana" },
+        { name: "Demiyan" },
+        { name: "Dyny" },
+        { name: "Doris" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+        { name: "Rasten" },
+        { name: "Runi" },
+        { name: "Dima" },
+        { name: "Diana" },
+        { name: "Dana" },
+        { name: "Demiyan" },
+        { name: "Dyny" },
+        { name: "Doris" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+        { name: "Rasten" },
+        { name: "Runi" },
+        { name: "Dima" },
+        { name: "Diana" },
+        { name: "Dana" },
+        { name: "Demiyan" },
+        { name: "Dyny" },
+        { name: "Doris" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+        { name: "Rasten" },
+        { name: "Runi" },
+        { name: "Dima" },
+        { name: "Diana" },
+        { name: "Dana" },
+        { name: "Demiyan" },
+        { name: "Dyny" },
+        { name: "Doris" },
+        { name: "Rostyk" },
+        { name: "Robert" },
+        { name: "Richard" },
+        { name: "Rikki" },
+        { name: "Renni" },
+        { name: "Ryli" },
+    ];
+
+    let usersContainer = document.getElementById("usersContainer");
 
 
+    let nextButton = document.querySelector(".next");
+    let prevButton = document.querySelector(".prev");
 
-
-    let next = document.getElementsByTagName('button')[1];
 
     let start = 0;
-    let step = 5;
+    let step = 10;
     let end = start + step;
 
 
-    next.onclick = function (){
+    function updateButtons() {
+        prevButton.disabled = start === 0;
+        nextButton.disabled = end >= users.length;
+    }
+
+
+
+    function displayUsers() {
+        usersContainer.innerHTML = "";
+
         for (let i = start; i < end; i++) {
 
-            if (i < users.length) {
-                let p = document.createElement('p');
-                p.innerText = `${users[i].name}`
-                document.body.appendChild(p);
-            }
+                let p = document.createElement("p");
+                p.innerText = ` ${i + 1})  ${users[i].name}`;
+                usersContainer.appendChild(p);
 
         }
+
+
+        updateButtons();
+    }
+
+    nextButton.onclick = function () {
+
         start = end;
-        end = end + step;
+        end = start + step;
+
+        displayUsers();
     };
 
 
+    prevButton.onclick = function () {
 
+        end = start;
+        start = start - step;
 
-    let prev = document.getElementsByTagName('button')[0];
-
-let newEnd = newStart - step
-// масив наоборот який йде по циклу назад
-//     змінити ліміт та і++
-    prev.onclick = function (){
-        for (let i = start; i < newEnd; i++) {
-
-            if (i < users.length) {
-                let p = document.createElement('p');
-                p.innerText = `${users[i].name}`
-                document.body.appendChild(p);
-            }
-
-        }
-        newStart = end;
-        newEnd = newEnd - step;
+        displayUsers();
     };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    displayUsers();
 </script>
 </body>
 </html>

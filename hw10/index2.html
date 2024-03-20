@@ -22,20 +22,24 @@
 </head>
 <body>
 
-
+<div></div>
 <script>
     // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-    let div = document.createElement('div');
-    let num = JSON.parse(localStorage.getItem('num')) || '0'
-    console.log(typeof num)
-    let number = num +1;
-    console.log(typeof number)
-div.innerText = `${number}`;
-    JSON.stringify('number');
-    localStorage.setItem('num',`${number}`);
 
-    document.body.appendChild(div);
+let div = document.getElementsByTagName('div')[0];
+
+let num = JSON.parse(localStorage.getItem('number')) || 0 ;
+
+let newNum = num + 1;
+
+div.innerText = `${newNum}`;
+
+localStorage.setItem('number',JSON.stringify(newNum));
+
+
+document.body.appendChild(div);
+
 
 
 
