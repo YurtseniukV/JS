@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            h2{
+                margin-top: 10px;
+            }
+p{
+    font-family: "Roboto Light",sans-serif;
+    font-size: 18px;
+    color: darkslategray;
+}
+            img{
+                width: 30vw;
+            }
+            li,ol{
+                font-family: "Roboto Light", sans-serif;
+                font-size: 24px;
+                color: #041111;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="container"></div>
+
+<script>
+
+    // - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
+
+
+    fetch('https://dummyjson.com/recipes')
+        .then(res => res.json())
+        .then(value => {
+
+            let {recipes} = value;
+            console.log(recipes);
+
+
+// div.innerHTML = `${}`
+
+            for (const recipe of recipes) {
+                console.log(recipe)
+                let div = document.querySelector('.container');
+                document.body.appendChild(div)
+
+                let h1 = document.createElement('h1');
+                h1.innerText = `${recipe.id} ) - ${recipe.name}, rating: ${recipe.rating} (cook time minutes - ${recipe.cookTimeMinutes})`
+
+                let p = document.createElement('p');
+                p.innerText = `${recipe.instructions}`
+
+                let img = document.createElement('img');
+                img.src = recipe.image;
+
+
+                let ol = document.createElement('ol');
+                ol.innerText = 'Ingredients:'
+                let recipeWriter = function () {
+                    for (const item of recipe.ingredients) {
+                        let li = document.createElement('li')
+                        li.innerText = item;
+                        ol.appendChild(li);
+
+                    }
+
+                    div.append(h1, p, img, ol);
+
+                }
+recipeWriter()
+
+            }
+
+
+        });
+
+
+</script>
+</body>
+</html>
