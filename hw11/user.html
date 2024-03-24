@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1><a href="users.html">Users list</a></h1>
+
+
+
+<script>
+console.log(location)
+    let userId = new URL(location.href).searchParams.get('id');
+    console.log(userId)
+    let baseURL = `https://jsonplaceholder.typicode.com/users/${userId}`
+    fetch(baseURL)
+        .then(resp=>resp.json())
+        .then(user =>{
+            console.log(user);
+            let div = document.createElement('div')
+            let h3 = document.createElement('h3')
+            h3.innerText='Information: '
+            div.append(h3)
+            for (const userKey in user) {
+if( userKey === 'address' || userKey === 'company'){
+    let ul = document.createElement('ul');
+    ul.innerText = `${userKey}:`
+
+    div.appendChild(ul)
+    for (const key in user[userKey]) {
+
+        let li = document.createElement('li');
+        li.innerText = `${key} : ${user[userKey][key]}`
+        ul.appendChild(li)
+
+    }
+}else{
+    let h5 = document.createElement('h5')
+    h5.innerText = ` ${userKey} - ${user[userKey]}`
+
+
+    div.appendChild(h5)
+}
+            }
+            document.body.appendChild(div)
+
+        })
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,8 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .usersContainer {
+            height: 80vh;
+            border: 1px grey solid;
+
+            li{
+                font-size: 18px;
+                font-family: "Roboto Light",sans-serif;
+                border: 0.1px darkslategrey solid;
+                margin: 5px;
+                padding: 2px;
+            }
+            p{
+                display: inline;
+                font-size: 20px;
+                font-family: "Calibri";
+                color: #0d46b9;
+                margin: 0;
+            }
+
+        }
+    </style>
+
+
 </head>
 <body>
 <div class="usersContainer"></div>
@@ -12,7 +37,7 @@
     //     вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
     // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
     // отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   де ХХХ - айді користувача)
-
+    //
     let url = new URL('http://jsonplaceholder.typicode.com/users');
 
     fetch(url)
@@ -22,13 +47,14 @@
             let ul = document.createElement('ul');
             for (const user of users) {
                 let li = document.createElement('li')
-                let a = document.createElement('a')
 
-                li.innerText = `Name: ${user.name}, id: ${user.id}  `
+                li.innerHTML = `Name: ${user.name}, id: ${user.id} , detail: <p>user-details.html?id=${user.id}</p> `
 
-                a.href = `https://jsonplaceholder.typicode.com/users/${user.id}`
-                a.innerText = 'user-details.html?id=' + user.id;
-                li.appendChild(a)
+                li.addEventListener('click', ()=>{
+                        location.href = `user.html?id=${user.id}`;
+console.log(location);
+                })
+
                 ul.appendChild(li)
 
             }
@@ -36,6 +62,15 @@
             document.body.appendChild(div);
         })
 
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
+
+
